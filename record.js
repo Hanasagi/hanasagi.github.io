@@ -268,7 +268,7 @@ function createRecordBar() {
     });
   } else {
   	if(window.location.hash != "" || window.location.hash != undefined)
-  		window.location.search=window.location.hash.replace(window.location.hash.match(/#[0-9]/g),"");
+  		window.location.search=window.location.hash.replace(window.location.hash.match(/#[0-9]\?/g),"");
     let urlParam = new URLSearchParams(window.location.search);
     let audioFile = urlParam.get("audio")
     let actionFile = urlParam.get("action")
