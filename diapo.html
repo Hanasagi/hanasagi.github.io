@@ -56,9 +56,10 @@
 	<section id="P1" fragments="[slides]{--slide++} 1s ease-in">
 		<h1 class="title relative middle" fragments="{top} 1s">Présentation du Projet</h1>
 		<h3 class="hidden" style='font-family:"Calibri Light"' fragments="{hidden} 1s">Projet choisi : <span class="hidden" fragments="{hidden} 1s" style='font-family:"Calibri"'>Création/développement d'un outil de création de présentations en Javascript/HTML5</span></h3>
+		<h3 class="hidden" fragments="{hidden} 1s">Plus précisement, améliorer le script</h3>
 		<div style="font-size: 25px;">
 		<div style="float:left;">
-		<h3 class="hidden" fragments="[this]{hidden} 1s +0[objectif]{hidden} 3s">Objectifs : </h3>
+		<h3 class="hidden" fragments="[this]{hidden} 1s +0[objectif]{hidden} 3s">Objectifs possible: </h3>
 		<ul id="objectif" class="hidden" style="text-align: left;">
 			<li>Extension des options de transitions et de leur description</li>
 			<li fragments="{highlight} 1s">Enregistrement audio</li>
@@ -87,12 +88,33 @@
 	<section id="P3" fragments="[slides]{--slide++} 1s ease-in">
 		<h1 class="middle title relative" fragments="{top} 1s">Points techniques</h1>
 		<h3 class="hidden" fragments="[this]{hidden} 1s +0[imgTech]{hidden} 2s">Comment sont enregistré les actions ?</h3>
-		<div id="imgTech" class="hidden"><img style="width:65%" src="recordAction.png"/>
+		<div style="font-size: 25px;text-align:left;">
+		<div id="imgTech" class="hidden" style="float:left;width:77%;"><img style="width:65%" src="recordAction.png"/>
 		<img style="width:50%" src="actionDownloader.png"/></div>
+		<div style="float:right;position:relative;right:5rem;">
+		<ul class="hidden" fragments="{hidden} 1s" >
+			<li class="hidden" fragments="{hidden} 1s">Fonction de temps</li>
+			<li class="hidden" fragments="{hidden} 1s">Capture des touches appuyés</li>
+			<li class="hidden" fragments="{hidden} 1s">Enregistrement dans une Map</li>
+			<li class="hidden" fragments="{hidden} 1s">Transformation en liste</li>
+			<li class="hidden" fragments="{hidden} 1s">Création du bouton de téléchargement</li>
+		</ul>
+		</div>
+		</div>
 	</section>
 	<section id="P4" fragments="[slides]{--slide++} 1s ease-in">
 		<h3 class="hidden" fragments="[this]{hidden} 1s +0[imgRead]{hidden} 2s">Comment sont-elles lu ?</h3>
-		<div class="hidden" id="imgRead"><img src="actionParse.png"><img src="actionInterval.png"></div>
+		<div style="font-size: 25px;text-align:left;">
+		<div class="hidden" style="float:left;width:65%;" id="imgRead"><img style="width:40%" src="actionParse.png"><img style="width:40%" src="actionInterval.png"></div>
+		<div style="float:right;position:relative;right:5rem;">
+		<ul class="hidden" fragments="{hidden} 1s" >
+			<li class="hidden" fragments="{hidden} 1s">Parsing des fichiers</li>
+			<li class="hidden" fragments="{hidden} 1s">Transformation en Map</li>
+			<li class="hidden" fragments="{hidden} 1s">Toutes les secondes, vérifier si le temps existe dans la Map</li>
+			<li class="hidden" fragments="{hidden} 1s">Executer la fonction correspondante</li>
+		</ul>
+		</div>
+	</div>
 	</section>
 	<section id="P5" fragments="[slides]{--slide++} 1s ease-in">
 		<h1 class="middle title relative">Conclusion</h1>
