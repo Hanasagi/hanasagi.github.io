@@ -267,7 +267,7 @@ function createRecordBar() {
       initPlay(audioFileUrl.value, jsonFileUrl.value);
     });
   } else {
-  	if(window.location.hash.match(/^#[0-9]$/g)===null && !window.location.hash===""){
+  	if(window.location.hash.match(/^#[0-9]$/g)===null && !window.location.hash==""){
   		window.location.search=window.location.hash.substring(2,window.location.hash.length);
   		window.location.hash = window.location.hash.substring(0,2);
   	}
