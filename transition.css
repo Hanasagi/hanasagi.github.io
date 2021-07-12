@@ -1,0 +1,76 @@
+	/* Slides transitions*/
+	body {
+		margin:0;			/* remove the margin og the body */
+		overflow:hidden; 		/* hide the scrollbars */
+	}
+	#slides {
+		font-size:0;			/* to remove spaces between slides */
+	}
+	#slides>*{
+		font-size:medium;		/* go back to default value */
+	}
+	#slides>section {
+		width:100vw;height:100vh;	/* slide should occupy the whole window */
+		overflow:hidden;		/* element of the slide should not overlap outside it */
+		position:relative;
+		flex-shrink:0;			/* don't shrink the slide by flex */
+	}
+
+	/* default mode : slides are displayed in one column */
+	#slides {				
+		--shift:0;				/* number of the slide */
+		position:absolute;			/* shift through the document to get to the active slide (classic disposition) */	
+		top:  calc(var(--shift) * (-100%));	/* shift down to the active slide */
+		left:0;
+		display:flex;				/* display slides like a flex-box */
+		flex-direction:column;			/* in column */
+	}
+	
+	/* inline mode : slides are on the same line */
+	#slides.inline {
+		--shift:0;				/* number of the slide */
+		position:absolute;			/* shift through the document to get to the active slide (inline disposition) */	
+		top:0;					/* shift left to the active slide */
+		left: calc(var(--shift) * (-100%));	
+		display:flex;				/* display slides like a flex-box */
+		flex-direction:row;			/* in row */
+	}
+	
+	/* fade mode : slides are stacked on one another */
+	#slides.fade {
+		display:block;
+	}
+	#slides.fade>section {
+		opacity: 0;
+		position:absolute; 
+		top:0;
+		left:0;visibility: hidden;}
+	#slides.fade>section.active {
+		opacity:1;visibility: visible;}
+
+	/* Navigation */
+	body.navigate{	
+		overflow:visible;	/* display sidebars */
+	}
+	body.navigate #slides{
+		top:0;
+		left:0;
+		flex-direction:row;	/* in rows */
+		flex-wrap:wrap;		/* go to line */
+		width:400vw;
+		--scale:0.2;
+		display:flex;
+		transform:scale(var(--scale));
+		transform-origin:0 0;
+		padding-left:200vw;
+		padding-right:200vw;
+		padding-top:200vh;
+		padding-bottom:200vh;
+		width:400vw;
+	}
+	body.navigate #slides section {
+		cursor:pointer;
+		opacity:1;
+		visibility:visible;
+		transition:all 0s;
+	}

@@ -1,0 +1,110 @@
+	/* Color and fonts */
+	body{--backcolor:#303530;color:white}
+	#slides>section {font-size:100;}
+	.Huge {font-size:360;}
+	.small {font-size:60;}
+	.tiny {font-size:30;}
+
+
+	/* Slides transitions*/
+	body {margin:0;overflow:hidden;}
+	#slides {
+		position:absolute; 
+		width:100%;height:100%;
+		font-size:0;
+	}
+	#slides>section {
+		background-color: var(--backcolor);
+	}
+	#slides {
+		--shift:0;
+		top:  calc(var(--shift) * (-100%));	
+		left:0;}
+	
+	#slides.inline {
+		--shift:0;
+		top:0;
+		left: calc(var(--shift) * (-100%));	}
+	#slides.inline {white-space: nowrap;}
+	#slides.inline>section { display:inline-block; white-space: normal;}
+	#slides>section {width:100%;height:100%;overflow:hidden; position:relative;}
+	#slides.fade>section {
+		opacity: 0;
+		position:absolute; 
+		top:0;
+		left:0;visibility: hidden;}
+	#slides.fade>section.active {
+		opacity:1;visibility: visible;}
+
+/* Control panel */
+	#control {width:100px; height:100px;position:absolute; bottom:30px; right:30px;}
+	#control #arrowDown, #control #arrowUp {stroke:white;fill:black;}
+	#control #arrowDown.inactive, #control #arrowUp.inactive {stroke:black;}
+	
+	#control #arrowDown:not(.inactive):hover use {transform: scale(1,1.11);}
+	#control #arrowUp:not(.inactive):hover use {transform: rotate(180deg) scale(1,1.11) !important;}
+
+/** Block Alignement **/
+	#slides>section>*  {
+		position:absolute;
+	}
+	.bottom
+		{bottom:0;}	
+	.right
+		{right:0;}
+	.overtop	
+		{position: absolute; top:0; transform:translateY(-100%); }
+	.middle	
+		{top: 50%; transform: translateY(-50%);}
+	.center	
+		{left:50%; transform: translateX(-50%); text-align:center;}
+	.full {width:100%;}
+	.middle.left
+		{top: 50%;left:0; transform: translateY(-50%);}
+	.rotate	{transform:rotate(90deg);}
+	.rotate.right {transform:translateX(50%) rotate(90deg) translateY(50%); right:0%;}
+	.rotate.right.middle {transform:translate(50%,-50%) rotate(90deg) translateY(50%); right:0%; top:50%;}
+	.rotate.middle {transform:translate(-50%,-50%) rotate(90deg) translateY(-50%);  top:50%;}
+	.middle.center {top:50%; left:50%; transform:translate(-50%,-50%);  text-align:center;}
+	
+	.overtop.center {top:0; left:50%; transform:translate(-50%,-100%);}
+	
+	.title-left {text-orientation: upright;
+						writing-mode: vertical-lr; height:100%; text-align:center;}
+	
+	.background {
+		position:absolute;
+	}
+	.hidden {
+		opacity:0;
+	}
+	.middle.null
+		{top: 50%; transform: translateY(-50%) scale(0);}
+	.center.null
+		{left:50%; transform: translateX(-50%) scale(0); text-align:center;}
+	.middle.center.null 
+		{top: 50%;left:50%; transform: translate(-50%,-50%) scale(0.0000001); text-align:center;}
+	.null {
+		transform: scale(0.0000001);
+	}
+	.removed {
+		display:none !important;
+	}
+
+	/* translate(calc(calc(var(--minX) * var(--scaleX)) * (100%)),
+				calc((0.1) * var(--scaleY) ))
+
+	*/
+	
+	/* For graphics (rescle SVG ) */
+	.graphic {
+		--maxX:1;
+		--minX:0;
+		--maxY:1;
+		--minY:0;
+		--scaleX:calc(1 / calc(var(--maxX) - var(--minX)));
+		--scaleY:calc(1 / calc(var(--maxY) - var(--minY)));
+
+		transform: translate(calc(calc(var(--minX) * var(--scaleX)) * (100%)),calc(1 * calc((100%) * var(--scaleY)))) scale(var(--scaleX),calc(-1 * var(--scaleY)))
+	}
+
